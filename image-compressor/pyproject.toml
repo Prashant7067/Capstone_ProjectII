@@ -1,0 +1,37 @@
+[tool.black]
+line-length = 99
+exclude = '''
+  /(
+    \ .git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | venv
+    | \.vscode
+    | __pycache__
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+'''
+
+include = '\.py$'
+
+[tool.isort]
+line_length = 99
+known_third_party = ["flask"]
+known_first_party = ["app"]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+
+[tool.coverage.run]
+omit = ['__init__.py']
+[tool.coverage.report]
+skip_empty = true
+
+[tool.ruff]
+line-length = 99

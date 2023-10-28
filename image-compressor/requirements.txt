@@ -1,0 +1,10 @@
+Flask
+Pillow
+isort
+ruff
+black
+flake8
+pytest
+pytest-cov
+coverage
+gunicorn
