@@ -35,10 +35,7 @@ def compress_image(input_path, output_path, desired_size, desired_byte_format):
         # If the image size is already smaller than the desired size, return the input image
         if size < desired_size:
             return img
-        #if the image size is already smaller than desired size , return the input image
-         if size < desired_size:
-             raise ValueError("NOT ACCEPTABLE")
-        
+          
         # Initialize the quality parameter
         quality = 100
         
