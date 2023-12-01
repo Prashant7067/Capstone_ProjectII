@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Fusion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+</head>
+<body>
+    <h1>Image Fusion</h1>
+    <form method="POST" enctype="multipart/form-data" action="{{ url_for('fusion') }}">
+        <div>
+            <label for="fusion-file-1">Choose the first file:</label>
+            <input type="file" id="fusion-file-1" name="file1" accept="image/*" required onchange="previewImage(event, 'fusion-imagePreview-1')">
+            <br>
+            <img id="fusion-imagePreview-1" src="#" alt="Selected Image 1" style="max-width: 300px; max-height: 300px; margin-top: 20px; display: none;">
+        </div>
+        <div>
+            <label for="fusion-file-2">Choose the second file:</label>
+            <input type="file" id="fusion-file-2" name="file2" accept="image/*" required onchange="previewImage(event, 'fusion-imagePreview-2')">
+            <br>
+            <img id="fusion-imagePreview-2" src="#" alt="Selected Image 2" style="max-width: 300px; max-height: 300px; margin-top: 20px; display: none;">
+        </div>
+        <div>
+            <input type="submit" value="Fuse Images">
+        </div>
+    </form>
+
+    <script>
+        function previewImage(event, previewId) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var output = document.getElementById(previewId);
+                output.src = reader.result;
+                output.style.display = 'block';
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>
+
