@@ -26,13 +26,13 @@ pipeline {
             }
         }
 
-        // stage('Push Images to Hub') {
-        //     steps {
-        //         withDockerRegistry([ credentialsId: "omgholap-dockerhub", url: "" ]) {
-        //             bat 'docker push prashantpandey103/capstone_project:code'
-        //         }
-        //     }
-        // }
+        stage('Push Images to Hub') {
+            steps {
+                withDockerRegistry([ credentialsId: "prashant-dockerhub", url: "" ]) {
+                    bat 'docker push prashantpandey103/capstone_project:code'
+                }
+            }
+        }
     }
 // post {
 //         always {
