@@ -33,36 +33,35 @@ pipeline {
             }
         }
     }
-// post {
-//         always {
-//             // This block will always be executed, regardless of the build result
-//             bat 'docker logout'
-//         }
+post {
+        always {
+             This block will always be executed, regardless of the build result
+            bat 'docker logout'
+        }
 
-//         // failure {
-//         //     emailext(
-//         //         attachLog: true,
-//         //         body: '''<html>
-//         //                 <p>The build failed. Please check the Jenkins console output for details.</p>
-//         //                 <p>Build URL: ${BUILD_URL}</p>
-//         //                 </html>''',
-//         //         subject: 'Build Failure',
-//         //         to: 'harsh.sinha20@st.niituniversity.in, aryan.apte20@st.niituniversity.in,vishishta.ranjan20@st.niituniversity.in ,om.gholap20@st.niituniversity.in',
-//         //         mimeType: 'text/html'
-//         //     )
+        failure {
+            emailext(
+                attachLog: true,
+                body: '''<html>
+                        <p>The build failed. Please check the Jenkins console output for details.</p>
+                        <p>Build URL: ${BUILD_URL}</p>
+                        </html>''',
+                subject: 'Build Failure',
+                to: 'prashant.pandey20@st.niituniversity.in, yashwant.gudeti20@st.niituniversity.in,jammula.supriya20@st.niituniversity.in ',
+                mimeType: 'text/html'
+            )
 
-//         // }
+        }
 
-//         // success {
-//         //     emailext(
-//         //         attachLog: true,
-//         //         body: 'The build was successful.',
-//         //         subject: 'Build Success',
-//         //         to: 'harsh.sinha20@st.niituniversity.in, aryan.apte20@st.niituniversity.in,vishishta.ranjan20@st.niituniversity.in ,om.gholap20@st.niituniversity.in',
-//         //         // to: 'harsh.sinha20@st.niituniversity.in, om.gholap20@st.niituniversity.in',
-//         //         mimeType: 'text/html'
-//         //     )
+        success {
+            emailext(
+                attachLog: true,
+                body: 'The build was successful.',
+                subject: 'Build Success',
+                to: 'prashant.pandey20@st.niituniversity.in, yashwant.gudeti20@st.niituniversity.in,jammula.supriya20@st.niituniversity.in',
+                mimeType: 'text/html'
+            )
 
-//         // }
-//     }
+        }
+    }
 }
