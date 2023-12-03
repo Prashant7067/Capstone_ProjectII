@@ -16,7 +16,8 @@ pipeline {
                     bat 'C:\\Users\\prashant pandey\\Desktop\\capstone_projectii\\ivenv\\Lib\\site-packages\\pytest'
                 }
             }
-        }
+        } 
+        
         stage('Build Images') {
             steps {
                 script {
