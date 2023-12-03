@@ -1,26 +1,21 @@
 # **Image Quality Reducer**
-# **Steps to Follow**
 
-## Create Virtual environment
+## To Run Locally
 
-1. pip install virtualenv
-2. python -m virtualenv ivenv
-3. ivenv\Scripts\activate
+```bash
+pip install virtualenv
+python -m virtualenv venv
+venv\Scripts\activate
+```
 
-## Install required Libraries
+## To Run On Docker
 
-1. pip install flask
-2. pip install pillow
+```bash
+docker build . -t capstone_project
+docker run -p 5050:8081 capstone_project
+```
 
-## Run the command in CMD at the 'img_compressor.py' path.
-
-    Set FLASK_APP = img_compressor.py
-
-    Set FLASK_ENVIRONMENT = development
-
-    flask run
-
-
+## Screenshot
 
 ##### Index Page
 
