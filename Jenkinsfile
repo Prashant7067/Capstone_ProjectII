@@ -18,13 +18,13 @@ pipeline {
         //         }
         //     }
         // }
-        // stage('Build Images') {
-        //     steps {
-        //         script {
-        //             bat 'docker build -t prashantpandey103/capstone_project:code .'
-        //         }
-        //     }
-        // }
+        stage('Build Images') {
+            steps {
+                script {
+                    bat 'docker build -t prashantpandey103/capstone_project:code .'
+                }
+            }
+        }
 
         // stage('Push Images to Hub') {
         //     steps {
