@@ -10,13 +10,6 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Prashant7067/Capstone_ProjectII.git'
             }
         }
-        // stage('Unit Tests') {
-        //     steps {
-        //         dir('C:/Users/prashant pandey/Desktop/capstone_projectii') {
-        //             bat '/ivenv/Lib/site-packages/_pytest'
-        //         }
-        //     }
-        // } 
         
         stage('Build Images') {
             steps {
@@ -33,36 +26,38 @@ pipeline {
                 }
             }
         }
-}
-post {
+    }
+
+    post {
         always {
-             This block will always be executed, regardless of the build result
+            /* This block will always be executed, regardless of the build result */
             bat 'docker logout'
         }
 
-        // failure {
-        //     emailext(
-        //         attachLog: true,
-        //         body: '''<html>
-        //                 <p>The build failed. Please check the Jenkins console output for details.</p>
-        //                 <p>Build URL: ${BUILD_URL}</p>
-        //                 </html>''',
-        //         subject: 'Build Failure',
-        //         to: 'prashant.pandey20@st.niituniversity.in, yashwant.gudeti20@st.niituniversity.in,jammula.supriya20@st.niituniversity.in ',
-        //         mimeType: 'text/html'
-        //     )
+        /* Uncomment the blocks below and adjust as needed */
+        /*
+        failure {
+            emailext(
+                attachLog: true,
+                body: '''<html>
+                        <p>The build failed. Please check the Jenkins console output for details.</p>
+                        <p>Build URL: ${BUILD_URL}</p>
+                        </html>''',
+                subject: 'Build Failure',
+                to: 'prashant.pandey20@st.niituniversity.in, yashwant.gudeti20@st.niituniversity.in,jammula.supriya20@st.niituniversity.in ',
+                mimeType: 'text/html'
+            )
+        }
 
-        // }
-
-        // success {
-        //     emailext(
-        //         attachLog: true,
-        //         body: 'The build was successful.',
-        //         subject: 'Build Success',
-        //         to: 'prashant.pandey20@st.niituniversity.in, yashwant.gudeti20@st.niituniversity.in,jammula.supriya20@st.niituniversity.in',
-        //         mimeType: 'text/html'
-        //     )
-
-        // }
+        success {
+            emailext(
+                attachLog: true,
+                body: 'The build was successful.',
+                subject: 'Build Success',
+                to: 'prashant.pandey20@st.niituniversity.in, yashwant.gudeti20@st.niituniversity.in,jammula.supriya20@st.niituniversity.in',
+                mimeType: 'text/html'
+            )
+        }
+        */
     }
 }
