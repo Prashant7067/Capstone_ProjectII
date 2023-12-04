@@ -35,7 +35,7 @@ pipeline {
         }
 
         /* Uncomment the blocks below and adjust as needed */
-        /*
+        
         failure {
             emailext(
                 attachLog: true,
@@ -58,6 +58,6 @@ pipeline {
                 mimeType: 'text/html'
             )
         }
-        */
+        
     }
 }
