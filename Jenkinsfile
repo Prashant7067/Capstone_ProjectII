@@ -12,8 +12,8 @@ pipeline {
         }
         stage('Unit Tests') {
             steps {
-                script {
-                    bat 'C:/Users/prashant pandey/Desktop/capstone_projectii/ivenv/Lib/site-packages/_pytest'
+                dir('C:/Users/prashant pandey/Desktop/capstone_projectii') {
+                    bat '/ivenv/Lib/site-packages/_pytest'
                 }
             }
         } 
