@@ -33,7 +33,7 @@ pipeline {
                 }
             }
         }
-//     }
+}
 post {
         always {
              This block will always be executed, regardless of the build result
