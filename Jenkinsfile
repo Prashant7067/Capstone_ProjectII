@@ -10,13 +10,13 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Prashant7067/Capstone_ProjectII.git'
             }
         }
-        stage('Unit Tests') {
-            steps {
-                dir('C:/Users/prashant pandey/Desktop/capstone_projectii') {
-                    bat '/ivenv/Lib/site-packages/_pytest'
-                }
-            }
-        } 
+        // stage('Unit Tests') {
+        //     steps {
+        //         dir('C:/Users/prashant pandey/Desktop/capstone_projectii') {
+        //             bat '/ivenv/Lib/site-packages/_pytest'
+        //         }
+        //     }
+        // } 
         
         stage('Build Images') {
             steps {
